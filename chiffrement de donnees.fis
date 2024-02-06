@@ -1,0 +1,41 @@
+[System]
+Name='Chiffrement de donnees'
+Ninputs=2
+Noutputs=1
+Nrules=0
+Nexceptions=0
+Conjunction='prod'
+MissingValues='random'
+
+[Input1]
+Active='yes'
+Name='Longeur de cles'
+Range=[       0.000 ,       1.000 ]
+NMFs=3
+MF1='Court','gaussian',[       0.100 ,       0.200 ]
+MF2='Moyenne','gaussian',[       0.100 ,       0.500 ]
+MF3='Long','gaussian',[       0.100 ,       0.800 ]
+
+[Input2]
+Active='yes'
+Name='methodes de chiffrement'
+Range=[       0.000 ,       1.000 ]
+NMFs=3
+MF1='Faible','gaussian',[       0.100 ,       0.200 ]
+MF2='Moyen','gaussian',[       0.100 ,       0.500 ]
+MF3='Fort','gaussian',[       0.100 ,       0.800 ]
+
+[Output1]
+Nature='crisp'
+Defuzzification='sugeno'
+Disjunction='max'
+DefaultValue=      -1.000 
+Classif='no' 
+Active='yes'
+Name='Chiffrement de donnees'
+Range=[       0.000 ,       1.000 ]
+NMFs=0
+
+[Rules]
+
+[Exceptions]

@@ -1,0 +1,41 @@
+[System]
+Name='mise a jour de securite'
+Ninputs=2
+Noutputs=1
+Nrules=0
+Nexceptions=0
+Conjunction='prod'
+MissingValues='random'
+
+[Input1]
+Active='yes'
+Name='Controle de pannes'
+Range=[       0.000 ,       1.000 ]
+NMFs=3
+MF1='faible','gaussian',[       0.100 ,       0.200 ]
+MF2='moyen','gaussian',[       0.100 ,       0.500 ]
+MF3='eleve','gaussian',[       0.100 ,       0.800 ]
+
+[Input2]
+Active='yes'
+Name='Adaptation aux menaces'
+Range=[       0.000 ,       1.000 ]
+NMFs=3
+MF1='minimale','gaussian',[       0.100 ,       0.200 ]
+MF2='moderee','gaussian',[       0.100 ,       0.500 ]
+MF3='elevee','gaussian',[       0.100 ,       0.800 ]
+
+[Output1]
+Nature='crisp'
+Defuzzification='sugeno'
+Disjunction='max'
+DefaultValue=      -1.000 
+Classif='no' 
+Active='yes'
+Name='Mise a jour de securite'
+Range=[       0.000 ,       1.000 ]
+NMFs=0
+
+[Rules]
+
+[Exceptions]

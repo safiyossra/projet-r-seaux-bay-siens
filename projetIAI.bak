@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProbModelXML formatVersion="0.2.0">
+  <ProbNet type="BayesianNetwork">
+    <Comment showWhenOpeningNetwork="false"><![CDATA[<<Double click to add/modify comment>>]]></Comment>
+    <DecisionCriteria>
+      <Criterion name="---" unit="---" />
+    </DecisionCriteria>
+    <Variables>
+      <Variable name="Controle de Pannes" type="finiteStates" role="chance">
+        <Coordinates x="658" y="327" />
+        <States>
+          <State name="elevee" />
+          <State name="moyen" />
+          <State name="Faible" />
+        </States>
+      </Variable>
+      <Variable name="Le chiffrement des données" type="finiteStates" role="chance">
+        <Coordinates x="330" y="440" />
+        <States>
+          <State name="eleve" />
+          <State name="moyenne" />
+          <State name="Faible" />
+        </States>
+      </Variable>
+      <Variable name="methodes de chiffrement" type="finiteStates" role="chance">
+        <Coordinates x="393" y="283" />
+        <States>
+          <State name="eleve" />
+          <State name="moyenne" />
+          <State name="Faible" />
+        </States>
+      </Variable>
+      <Variable name=" Les compétences des employés " type="finiteStates" role="chance">
+        <Coordinates x="337" y="95" />
+        <States>
+          <State name="expert" />
+          <State name="avancées" />
+          <State name="Debutant" />
+        </States>
+      </Variable>
+      <Variable name="Sécurité de donnés" type="finiteStates" role="chance">
+        <Coordinates x="642" y="608" />
+        <States>
+          <State name="eleve" />
+          <State name="Moyen" />
+          <State name="Faible" />
+        </States>
+      </Variable>
+      <Variable name=" La sécurité du réseau" type="finiteStates" role="chance">
+        <Coordinates x="920" y="553" />
+        <States>
+          <State name="Faible" />
+          <State name="moyen" />
+          <State name="Fort" />
+        </States>
+      </Variable>
+      <Variable name="Performance humaine" type="finiteStates" role="chance">
+        <Coordinates x="627" y="185" />
+        <States>
+          <State name="Élevée  " />
+          <State name="Modérée" />
+          <State name="Faible" />
+        </States>
+      </Variable>
+      <Variable name="La mise à jour de sécurité" type="finiteStates" role="chance">
+        <Coordinates x="672" y="475" />
+        <States>
+          <State name="elevee" />
+          <State name="moyenne" />
+          <State name="Faible" />
+        </States>
+      </Variable>
+      <Variable name=" La sécurité des protocoles" type="finiteStates" role="chance">
+        <Coordinates x="1118" y="169" />
+        <States>
+          <State name="fiable" />
+          <State name="standard" />
+          <State name="fargile" />
+        </States>
+      </Variable>
+      <Variable name="Le stress" type="finiteStates" role="chance">
+        <Coordinates x="600" y="59" />
+        <States>
+          <State name="Sous_tension" />
+          <State name="Fatigue" />
+          <State name="Calme" />
+        </States>
+      </Variable>
+      <Variable name="Complexité de l'Architecture" type="finiteStates" role="chance">
+        <Coordinates x="1336" y="234" />
+        <States>
+          <State name="complexe" />
+          <State name="normal" />
+          <State name="simple" />
+        </States>
+      </Variable>
+      <Variable name="Segmentation du Réseau" type="finiteStates" role="chance">
+        <Coordinates x="1138" y="392" />
+        <States>
+          <State name="mal" />
+          <State name="moyenne" />
+          <State name="bien" />
+        </States>
+      </Variable>
+      <Variable name="longueur de Clés " type="finiteStates" role="chance">
+        <Coordinates x="146" y="303" />
+        <States>
+          <State name="longue" />
+          <State name="moyenne" />
+          <State name="Court" />
+        </States>
+      </Variable>
+      <Variable name="Adaptation aux menaces" type="finiteStates" role="chance">
+        <Coordinates x="898" y="273" />
+        <States>
+          <State name="elevee" />
+          <State name="moderee" />
+          <State name="Minimale" />
+        </States>
+      </Variable>
+      <Variable name="redondance logicielle et matérielle" type="finiteStates" role="chance">
+        <Coordinates x="859" y="97" />
+        <States>
+          <State name="Étendue" />
+          <State name="Faible" />
+          <State name="Absente" />
+        </States>
+      </Variable>
+    </Variables>
+    <Links>
+      <Link directed="true">
+        <Variable name="Controle de Pannes" />
+        <Variable name="La mise à jour de sécurité" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Le chiffrement des données" />
+        <Variable name="Sécurité de donnés" />
+      </Link>
+      <Link directed="true">
+        <Variable name="methodes de chiffrement" />
+        <Variable name="Le chiffrement des données" />
+      </Link>
+      <Link directed="true">
+        <Variable name=" Les compétences des employés " />
+        <Variable name="Performance humaine" />
+      </Link>
+      <Link directed="true">
+        <Variable name=" La sécurité du réseau" />
+        <Variable name="Sécurité de donnés" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Performance humaine" />
+        <Variable name="Controle de Pannes" />
+      </Link>
+      <Link directed="true">
+        <Variable name="La mise à jour de sécurité" />
+        <Variable name=" La sécurité du réseau" />
+      </Link>
+      <Link directed="true">
+        <Variable name=" La sécurité des protocoles" />
+        <Variable name="Segmentation du Réseau" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Le stress" />
+        <Variable name="Performance humaine" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Complexité de l'Architecture" />
+        <Variable name="Segmentation du Réseau" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Segmentation du Réseau" />
+        <Variable name=" La sécurité du réseau" />
+      </Link>
+      <Link directed="true">
+        <Variable name="longueur de Clés " />
+        <Variable name="Le chiffrement des données" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Adaptation aux menaces" />
+        <Variable name="La mise à jour de sécurité" />
+      </Link>
+      <Link directed="true">
+        <Variable name="redondance logicielle et matérielle" />
+        <Variable name="Controle de Pannes" />
+      </Link>
+    </Links>
+    <Potentials>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Controle de Pannes" />
+          <Variable name="Performance humaine" />
+          <Variable name="redondance logicielle et matérielle" />
+        </Variables>
+        <Values>0.996 0.003 0.001 0.95 0.048 0.002 0.18 0.009 0.811 0.951 0.048 0.001 0.048 0.95 0.002 0.033 0.667 0.3 0.174 0.786 0.04 0.009 0.18 0.811 0.002 0.047 0.951</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Le chiffrement des données" />
+          <Variable name="methodes de chiffrement" />
+          <Variable name="longueur de Clés " />
+        </Variables>
+        <Values>0.944 0.048 0.008 0.95 0.048 0.002 0.18 0.009 0.811 0.816 0.182 0.002 0.048 0.95 0.002 0.001 0.182 0.817 0.817 0.182 0.001 0.048 0.931 0.021 0.001 0.182 0.817</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="methodes de chiffrement" />
+        </Variables>
+        <Values>0.8 0.2 0.0</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name=" Les compétences des employés " />
+        </Variables>
+        <Values>0.8 0.2 0.0</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Sécurité de donnés" />
+          <Variable name="Le chiffrement des données" />
+          <Variable name=" La sécurité du réseau" />
+        </Variables>
+        <Values>0.174 0.786 0.04 0.001 0.182 0.817 0.002 0.003 0.995 0.951 0.048 0.001 0.045 0.909 0.046 0.002 0.047 0.951 0.987 0.011 0.002 0.811 0.18 0.009 0.01 0.81 0.18</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name=" La sécurité du réseau" />
+          <Variable name="La mise à jour de sécurité" />
+          <Variable name="Segmentation du Réseau" />
+        </Variables>
+        <Values>0.001 0.817 0.182 0.001 0.002 0.997 0.001 0.001 0.998 0.002 0.987 0.011 0.372 0.58 0.048 0.011 0.987 0.002 0.95 0.048 0.002 0.996 0.003 0.001 0.181 0.817 0.002</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Performance humaine" />
+          <Variable name=" Les compétences des employés " />
+          <Variable name="Le stress" />
+        </Variables>
+        <Values>0.817 0.182 0.001 0.811 0.18 0.009 0.009 0.81 0.181 0.048 0.951 0.001 0.046 0.909 0.045 0.001 0.047 0.952 0.002 0.996 0.002 0.002 0.95 0.048 0.002 0.011 0.987</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="La mise à jour de sécurité" />
+          <Variable name="Controle de Pannes" />
+          <Variable name="Adaptation aux menaces" />
+        </Variables>
+        <Values>0.95 0.048 0.002 0.18 0.001 0.819 0.174 0.786 0.04 0.811 0.18 0.009 0.045 0.909 0.046 0.009 0.18 0.811 0.01 0.81 0.18 0.001 0.002 0.997 0.001 0.001 0.998</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name=" La sécurité des protocoles" />
+        </Variables>
+        <Values>0.2 0.8 0.0</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Le stress" />
+        </Variables>
+        <Values>0.6 0.3 0.1</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Complexité de l'Architecture" />
+        </Variables>
+        <Values>0.6 0.3 0.1</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Segmentation du Réseau" />
+          <Variable name=" La sécurité des protocoles" />
+          <Variable name="Complexité de l'Architecture" />
+        </Variables>
+        <Values>0.95 0.048 0.002 0.048 0.951 0.001 0.174 0.786 0.04 0.002 0.987 0.011 0.048 0.95 0.002 0.002 0.95 0.048 0.01 0.81 0.18 0.002 0.047 0.951 0.002 0.011 0.987</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="longueur de Clés " />
+        </Variables>
+        <Values>0.8 0.2 0.0</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Adaptation aux menaces" />
+        </Variables>
+        <Values>0.8 0.2 0.0</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="redondance logicielle et matérielle" />
+        </Variables>
+        <Values>0.8 0.2 0.0</Values>
+      </Potential>
+    </Potentials>
+  </ProbNet>
+  <InferenceOptions>
+    <MulticriteriaOptions>
+      <SelectedAnalysisType>UNICRITERION</SelectedAnalysisType>
+      <Unicriterion>
+        <Scales>
+          <Scale Criterion="---" Value="1.0" />
+        </Scales>
+      </Unicriterion>
+      <CostEffectiveness>
+        <Scales>
+          <Scale Criterion="---" Value="1.0" />
+        </Scales>
+        <CE_Criteria>
+          <CE_Criterion Criterion="---" Value="Cost" />
+        </CE_Criteria>
+      </CostEffectiveness>
+    </MulticriteriaOptions>
+  </InferenceOptions>
+  <Evidence>
+    <EvidenceCase />
+    <EvidenceCase>
+      <Finding variable="Controle de Pannes" state="moyen" />
+      <Finding variable=" La sécurité du réseau" state="Fort" />
+      <Finding variable="Segmentation du Réseau" state="bien" />
+      <Finding variable="Complexité de l'Architecture" state="normal" />
+      <Finding variable=" Les compétences des employés " state="expert" />
+      <Finding variable=" La sécurité des protocoles" state="standard" />
+      <Finding variable="Le stress" state="Calme" />
+      <Finding variable="methodes de chiffrement" state="moyenne" />
+      <Finding variable="redondance logicielle et matérielle" state="Étendue" />
+    </EvidenceCase>
+    <EvidenceCase>
+      <Finding variable="Controle de Pannes" state="moyen" />
+      <Finding variable=" La sécurité du réseau" state="Fort" />
+      <Finding variable="Segmentation du Réseau" state="bien" />
+      <Finding variable="Complexité de l'Architecture" state="normal" />
+      <Finding variable=" Les compétences des employés " state="avancées" />
+      <Finding variable=" La sécurité des protocoles" state="standard" />
+      <Finding variable="Le stress" state="Calme" />
+      <Finding variable="methodes de chiffrement" state="moyenne" />
+      <Finding variable="redondance logicielle et matérielle" state="Étendue" />
+    </EvidenceCase>
+    <EvidenceCase>
+      <Finding variable="Controle de Pannes" state="moyen" />
+      <Finding variable=" La sécurité du réseau" state="Fort" />
+      <Finding variable="Segmentation du Réseau" state="bien" />
+      <Finding variable="Complexité de l'Architecture" state="normal" />
+      <Finding variable=" Les compétences des employés " state="avancées" />
+      <Finding variable="Performance humaine" state="Faible" />
+      <Finding variable=" La sécurité des protocoles" state="standard" />
+      <Finding variable="Le stress" state="Calme" />
+      <Finding variable="methodes de chiffrement" state="moyenne" />
+      <Finding variable="redondance logicielle et matérielle" state="Étendue" />
+    </EvidenceCase>
+  </Evidence>
+</ProbModelXML>

@@ -1,0 +1,50 @@
+[System]
+Name='securite de reseau'
+Ninputs=2
+Noutputs=1
+Nrules=9
+Nexceptions=0
+Conjunction='prod'
+MissingValues='random'
+
+[Input1]
+Active='yes'
+Name='segmentation du reseau'
+Range=[       0.000 ,       1.000 ]
+NMFs=3
+MF1='mal','gaussian',[       0.100 ,       0.200 ]
+MF2='moyenne','gaussian',[       0.100 ,       0.500 ]
+MF3='bien','gaussian',[       0.100 ,       0.800 ]
+
+[Input2]
+Active='yes'
+Name='mise a jour du securite'
+Range=[       0.000 ,       1.000 ]
+NMFs=3
+MF1='faible','gaussian',[       0.100 ,       0.200 ]
+MF2='moyen','gaussian',[       0.100 ,       0.500 ]
+MF3='eleve','gaussian',[       0.100 ,       0.800 ]
+
+[Output1]
+Nature='crisp'
+Defuzzification='sugeno'
+Disjunction='max'
+DefaultValue=      -1.000 
+Classif='no' 
+Active='yes'
+Name='Securite du reseau'
+Range=[       0.000 ,       1.000 ]
+NMFs=0
+
+[Rules]
+1, 1,        0.200 ,
+1, 2,        0.200 ,
+1, 3,        0.500 ,
+2, 1,        0.500 ,
+2, 2,        0.500 ,
+2, 3,        0.500 ,
+3, 1,        0.500 ,
+3, 2,        0.800 ,
+3, 3,        0.800 ,
+
+[Exceptions]
