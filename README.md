@@ -1,1 +1,1 @@
-# projet-r-seaux-bay-siens
+# projet-réseaux-bayésiens
